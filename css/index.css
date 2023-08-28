@@ -6,11 +6,10 @@
     --primario: #FFC107;
     --secundario: #35898b;
     --gris: #757575;
-    --grisClaro: #DFE9F3;
     /* y asi mas colores que estaran en nuestra pag */
 }
 
-/* GLOBALES*/
+/* ------------------------------------- GLOBALES --------------------------------------- */
 html {
     font-size: 62.5%; /* truco para formatear la pag y usar la unidad de medida rem, en html y body */
     font-family: 'Krub', sans-serif;
@@ -18,21 +17,15 @@ html {
     /*scroll-snap-type: y mandatory;   x proximity */
 }
 
-.servicios, .navegacion_principal, .scroll{
-    scroll-snap-align: center;
-    /* scroll-snap-stop: always; */
-}
-
 *,
 *:before,
 *:after {
-    /* box-sizing anterior */
     box-sizing: inherit;
 }
 
 body {
     font-size: 16px; /* Con estas 2 lineas (html y body) ya podemos escribir codigo en rem. 1rem = 10px... 60px=6rem */
-    background-color: #efefef;
+    background-image: linear-gradient(to top, #efefef 0%, #efefefa0 100%);
 }
 
 .contenedor {
@@ -46,13 +39,12 @@ body {
 .boton {
     background-color: var(--secundario);
     color: var(--blanco);
-    /* Con la palabra var(usamos nuestro custon propety) */
     padding: 1rem 2rem;
     font-size: 2rem;
     text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
-    border-radius: .5rem;/* 5px */
+    border-radius: 2rem;/* 1rem */
     border: none; /* Es para el input del formulario */
 }
 
@@ -65,7 +57,7 @@ body {
     border-radius: 2rem;
 }
 
-/* TIPOGRAFIA */
+/* ------------------------------------- TIPOGRAFIA --------------------------------------- */
 h1 {
     font-size: 3.8rem;
     /* La medida rem es relativa al docuemnto y en la pantalla donde se visualizara */
@@ -86,42 +78,31 @@ h3 {
     text-align: center;
 }
 
-/* TITULOS */
+/* ------------------------------------- TITULOS --------------------------------------- */
 
 header .titulo{
-    background-color: #808080;
     margin: 0;
     padding: 2.5rem;
-    font-family: "comic sans ms";
 }
 
-.titulo span {
-    font-size: 2rem;
-}
-
-/* NAVEGACION PRINCIPAL */
+/* ------------------------------------- NAVEGACION PRINCIPAL --------------------------------------- */
 .nav_bg {
     background-color: var(--secundario);
 }
 
 .navegacion_principal {
     display: flex;
-    /* No hace nada, pero nos habilita a usar flexbox*/
-    /*flex-direction:row, viene por defecto*/
-    flex-direction: column;
+    flex-direction: column; /*flex-direction:row, viene por defecto*/
     /* DECLARAMOS ESTO PORQUE EMPEZAMOS DESDE UN DISPOSITIVO PEQUEÑO MOVIL, AL PASASR LOS 480PX TOMA ROW*/
-    /* flex-direction: column;  --- Va junto a su propiedad, aling-items: center (lo puese aqui ".navegacion_principal a{ "*/
+    /* flex-direction: column;  --- Va junto a su propiedad, aling-items: center (lo puse aqui ".navegacion_principal a{ "*/
 }
 
-@media (min-width:480px) {
-
+@media (min-width:480px) {  /* tel: 480px es el estandar  tablet:768px - laptop/escritorio: 1140px - 1400px*/
     /* A partir de 390px "Iphone 12pro", Cambia a Flex-direction: row  */
     .navegacion_principal {
         flex-direction: row;
-        /* tel: 480px es el estandar  tablet:768px - laptop/escritorio: 1140px - 1400px*/
         justify-content: space-around;
         /* Para separar la barra de navegacion, otro valor = center/ ó space-between SOLO PARA LA BARRA HORIZONTALMENTE*/
-
         /* Tambien se puede restablecer los valores ejm  with:auto */
     }
 }
@@ -134,21 +115,19 @@ header .titulo{
     font-weight: bold;
     /* font-size: 2rem; */
     padding: 1rem;
-    /* Para aplicar el :hover .navegacion_principal a:hover{  */
 }
 
-.navegacion_principal a:hover {
-    /* con hover aparece al acercar el marcador a: porque es enlace */
+.resaltado a:hover {
+    background-color: var(--primario);
+    color: var(--oscuro);
+} 
+
+.enviar button:hover {
     background-color: var(--primario);
     color: var(--oscuro);
 }
 
-section a:hover{
-    background-color: var(--primario);
-    color: var(--oscuro);
-}
-
-/* DEVELOPER */
+/* ------------------------------------- DEVELOPER --------------------------------------- */
 .developer {
     background-image: url(../img/developer.jpeg);
     background-repeat: no-repeat;
@@ -181,7 +160,7 @@ section a:hover{
     color: var(--blanco)
 }
 
-/* SERVICIOS */
+/* ------------------------------------- SERVICIOS --------------------------------------- */
 @media (min-width:480px) {
     .servicios {
         display: grid;
@@ -225,7 +204,20 @@ section a:hover{
     align-items: center;
 }
 
-/*  FORMULARIO */
+/* ------------------------------------- FORMULARIO --------------------------------------- */
+.error, .enviado {
+    text-align: center;
+    padding: 1rem;
+    color: var(--blanco);
+    text-transform: uppercase;
+}
+.error{
+    background-color: rgb(185, 0, 0);
+}
+.enviado {
+    background-color: rgb(74, 185, 0);
+}
+
 .formulario fieldset {
     border: none;
 }
@@ -305,8 +297,7 @@ section a:hover{
     cursor: pointer;
 }
 
-/* FOOTER */
-
+/* ------------------------------------- FOOTER --------------------------------------- */
 .footer{
     text-align: center;
     padding-top: 3rem;
