@@ -120,7 +120,7 @@ header .titulo{
 }
 
 .nav_bg a:hover{
-    color: var(--primario);
+    color: rgb(255, 255, 78);
 }
 
 .resaltado a:hover {
