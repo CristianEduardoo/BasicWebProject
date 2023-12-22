@@ -135,11 +135,11 @@ header .titulo{
 
 /* ------------------------------------- DEVELOPER --------------------------------------- */
 .developer {
-    background-image: url(../img/developer.jpeg);
+    background-image: url(../img/img2.jpg);
     background-repeat: no-repeat;
     /* Por default todas las img se repiten */
-    background-size: cover;
-    /* cover, toma todo el ancho  */
+    background-size: cover; /* cover, toma todo el ancho  */
+    background-position: center center; 
     height: 450px;
     /* Con el box-sizing de PaulIrishWeb ya no tenemos el problema de padding*/
     position: relative;
