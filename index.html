@@ -3,11 +3,11 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="author" content="Cristian Eduardo Castro Vargas">
-    <meta name="lang" content="es_ES">
     <meta name="description" content="BasicWebProject">
     <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="preload" href="css/Normalize.css" as="style"> <!-- Siempre mejor que lea el normalize primero -->
     <link rel="stylesheet" href="css/Normalize.css">
     <title>Programador Web Free Lancer </title> <!-- Siempre el tipo de fuente/librerias deben ir primero -->
@@ -16,7 +16,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
     <link rel="preload" href="css/index.css" as="style"><!-- Para que el sitio web sea mas rapido rel=preload-->
     <link rel="stylesheet" href="css/index.css" type="text/css">
-    <!-- <script type="text/java" src="/java/fichero.java"></script> -->
 </head>
 
 <body>
@@ -24,17 +23,34 @@
         <h1 class="titulo">Cristian Eduardo Castro Vargas</h1>
     </header>
 
-    <div class="nav_bg"><!-- Creamos el div para poder expandir la barra, por que con el contenedor lo hemos centrado -->
-        <nav class="navegacion_principal contenedor"><!-- (Para crear una barra de navegacion en foma horizontal) Si queremos en forma vertical, se recomuenda usar <li> cuando son de multiples filas/niveles. en este caso es solo de una linea horizontal -->
-            <a href="index.html">Inicio</a>
-            <a href="#">Sobre mi</a>
-            <a href="#">Proyectos</a>
-            <a href="#">Clientes</a>
-            <a href="#scroll">Contacto</a>
-        </nav>
-    </div>
+    <nav class="navbar navbar-expand-md navbar-light bg-light w-100">
+        <div class="container-fluid">
+            <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse w-100" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sobre mí</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Proyectos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Clientes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#scroll">Contacto</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <section class="developer resaltado">
+    <section class="developer">
         <div class="contenido-developer">
             <h2 class="titulo">Programador web</h2>
             <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-map-pin" width="76" height="76"
@@ -168,6 +184,11 @@
 
     <script src="js/modernizr.js"></script>
     <script src="js/scripts.js"></script>
+    <!-- jQuery (necesario para Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 </body>
 
 </html>

@@ -3,7 +3,7 @@
     /* Root es un seudoselector. Definiremos nuesta paleta de colores para la pag "custom property"*/
     --blanco: #ffffff;
     --oscuro: #212121;
-    --primario: #FFC107;
+    --primario: #ffc107;
     --secundario: #35898b;
     --gris: #757575;
     /* y asi mas colores que estaran en nuestra pag */
@@ -88,46 +88,54 @@ header .titulo{
 }
 
 /* ------------------------------------- NAVEGACION PRINCIPAL --------------------------------------- */
-.nav_bg {
+.navbar {
+    position: relative;
+    padding: 0rem;
+}
+
+.container-fluid{
+    padding: 0rem;
     background-color: var(--secundario);
 }
 
-.navegacion_principal {
+.navbar-light .navbar-toggler{
+    border: 2px solid var(--primario); /* Establece el color del borde */
+    border-radius: 4px; /* Añade bordes redondeados */
+}
+
+.navbar-light .navbar-toggler-icon{
+    background-image: url("data:image/svg+xml,%3csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3e%3cpath stroke='rgb(255, 193, 7)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");    
+}
+
+
+.navbar-toggler{
+    margin: 0rem 1rem 1rem 1rem;
+}
+
+.navbar-toggler:hover {
+    background-color: var(--primario);
+}
+
+.navbar-nav {
+    width: 100%;
     display: flex;
-    flex-direction: column; /*flex-direction:row, viene por defecto*/
-    /* DECLARAMOS ESTO PORQUE EMPEZAMOS DESDE UN DISPOSITIVO PEQUEÑO MOVIL, AL PASASR LOS 480PX TOMA ROW*/
-    /* flex-direction: column;  --- Va junto a su propiedad, aling-items: center (lo puse aqui ".navegacion_principal a{ "*/
+    justify-content: space-around;
 }
 
-@media (min-width:480px) {  /* tel: 480px es el estandar  tablet:768px - laptop/escritorio: 1140px - 1400px*/
-    /* A partir de 390px "Iphone 12pro", Cambia a Flex-direction: row  */
-    .navegacion_principal {
-        flex-direction: row;
-        justify-content: space-around;
-        /* Para separar la barra de navegacion, otro valor = center/ ó space-between SOLO PARA LA BARRA HORIZONTALMENTE*/
-        /* Tambien se puede restablecer los valores ejm  with:auto */
-    }
-}
-
-.navegacion_principal a {
-    display: block;
+.bg-light .navbar-nav .nav-link {
+    background-color: var(--secundario);
     text-align: center;
-    color: var(--blanco);
-    text-decoration: none;
-    font-weight: bold;
-    /* font-size: 2rem; */
-    padding: 1rem;
 }
 
-.nav_bg a:hover{
+.bg-light .navbar-nav .nav-link {
+    color: var(--blanco);
+}
+
+.bg-light .navbar-nav .nav-link:hover {
     color: rgb(255, 255, 78);
 }
 
-.resaltado a:hover {
-    background-color: var(--primario);
-    color: var(--oscuro);
-} 
-
+.developer a:hover,
 .enviar button:hover {
     background-color: var(--primario);
     color: var(--oscuro);
