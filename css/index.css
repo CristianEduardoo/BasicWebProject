@@ -41,7 +41,6 @@ body {
     color: var(--blanco);
     padding: 1rem 2rem;
     font-size: 2rem;
-    text-decoration: none;
     text-transform: uppercase;
     font-weight: 700;
     border-radius: 2rem;/* 1rem */
@@ -100,7 +99,7 @@ header .titulo{
 
 .navbar-light .navbar-toggler{
     border: 2px solid var(--primario); /* Establece el color del borde */
-    border-radius: 4px; /* Añade bordes redondeados */
+    border-radius: 5px; /* Añade bordes redondeados */
 }
 
 .navbar-light .navbar-toggler-icon{
@@ -110,10 +109,6 @@ header .titulo{
 
 .navbar-toggler{
     margin: 0rem 1rem 1rem 1rem;
-}
-
-.navbar-toggler:hover {
-    background-color: var(--primario);
 }
 
 .navbar-nav {
@@ -132,13 +127,14 @@ header .titulo{
 }
 
 .bg-light .navbar-nav .nav-link:hover {
-    color: rgb(255, 255, 78);
+    color: var(--primario);
 }
 
 .developer a:hover,
 .enviar button:hover {
     background-color: var(--primario);
     color: var(--oscuro);
+    text-decoration: none;
 }
 
 /* ------------------------------------- DEVELOPER --------------------------------------- */
