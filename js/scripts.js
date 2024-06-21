@@ -17,7 +17,9 @@ emailInput.addEventListener("input", leerTexto);
 mensajeInput.addEventListener("input", leerTexto);
 
 function leerTexto(evento) {
-    datos[evento.target.id] = evento.target.value;
+    const result = sanitizeInput(escapeHTML(evento.target.value));
+    //console.log(result);
+    datos[evento.target.id] = result;
     //console.log(datos);
 }
 
@@ -99,3 +101,23 @@ function scrollNav() {
         })
     })
 } */
+
+//-------------------------------------  Funciones de validacíon ---------------------------------------
+
+//Evitar la ejecución de scripts:
+function escapeHTML(input) {
+  return input.replace(/[&<>"']/g, function (match) {
+    return {
+      "&": "&amp;",
+      "<": "&lt;",
+      ">": "&gt;",
+      '"': "&quot;",
+      "'": "&#39;",
+    }[match];
+  });
+}
+
+//Sanitización del lado del cliente:
+function sanitizeInput(input) {
+  return encodeURIComponent(input);
+}
